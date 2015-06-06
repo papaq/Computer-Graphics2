@@ -1,0 +1,50 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:Properties="clr-namespace:WpfApplication1.Properties" x:Class="WpfApplication1.MainWindow"
+        Title="Get A" Height="665.373" Width="525" MinWidth="720" MinHeight="640" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="509"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="gridButtonBox" Margin="10,0,10,-15" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="87"/>
+                <ColumnDefinition Width="86"/>
+            </Grid.ColumnDefinitions>
+            <Rectangle x:Name="rectangle2" HorizontalAlignment="Left" Height="91" Margin="37,15,0,0" Stroke="Black" VerticalAlignment="Top" Width="100" RadiusX="3" RadiusY="3" Grid.Column="1"/>
+            <Rectangle x:Name="rectangle3" HorizontalAlignment="Left" Height="91" Margin="36,15,0,0" Stroke="Black" VerticalAlignment="Top" Width="100" RadiusX="3" RadiusY="3" Grid.Column="2"/>
+            <Rectangle x:Name="rectangle1" HorizontalAlignment="Left" Height="91" Margin="37,15,0,0" Stroke="Black" VerticalAlignment="Top" Width="100" RadiusX="3" RadiusY="3"/>
+            <Button x:Name="buttonClear" Content="CLEAR" HorizontalAlignment="Center" Margin="8,29,2,29" Width="76" FontSize="16" Grid.Column="4" Click="buttonClear_Click"/>
+            <Grid x:Name="gridR" Grid.Column="2" Margin="12,0,11,0" Visibility="Hidden">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBox HorizontalAlignment="Left" Height="24" Margin="28,12,0,0" TextWrapping="Wrap" Text="R1" VerticalAlignment="Top" Width="63" BorderBrush="{x:Null}" FontSize="17" FontWeight="Bold" HorizontalContentAlignment="Right" IsTabStop="False" IsHitTestVisible="False" Focusable="False" AllowDrop="False"/>
+                <TextBox HorizontalAlignment="Left" Height="24" Margin="28,11,0,0" TextWrapping="Wrap" Text="R2" VerticalAlignment="Top" Width="63" BorderBrush="{x:Null}" FontSize="17" FontWeight="Bold" HorizontalContentAlignment="Right" Grid.Row="1" IsTabStop="False" IsHitTestVisible="False" Focusable="False" AllowDrop="False"/>
+                <TextBox x:Name="textBoxR1" HorizontalAlignment="Right" Height="24" Margin="0,12,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="63" BorderBrush="Black" FontSize="17" FontWeight="Bold" IsHitTestVisible="True" AllowDrop="False"/>
+                <TextBox x:Name="textBoxR2" HorizontalAlignment="Right" Height="24" Margin="0,11,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="63" BorderBrush="Black" FontSize="17" FontWeight="Bold" Grid.Row="1" IsHitTestVisible="True" AllowDrop="False" IsEnabled="False"/>
+            </Grid>
+            <Button x:Name="buttonDrawCurve" Content="DRAW" HorizontalAlignment="Center" Margin="0,29,1,29" Width="76" FontSize="16" Grid.Column="3" Click="buttonDrawCurve_Click"/>
+            <Image x:Name="imgMoveCurve" Margin="37,19,37,10" Width="100" MouseLeftButtonDown="imgMoveCurve_MouseLeftButtonDown" MouseLeftButtonUp="imgMoveCurve_MouseLeftButtonUp" MouseMove="imgMoveCurve_MouseMove" Height="85" OpacityMask="#FFAA6868" Source="Resources/1.png"/>
+            <Image x:Name="imgScaleCurve" Margin="37,19,37,10" Width="100" Grid.Column="1" Source="Resources/2.png" MouseLeftButtonDown="imgScaleCurve_MouseLeftButtonDown" MouseLeftButtonUp="imgScaleCurve_MouseLeftButtonUp" MouseMove="imgScaleCurve_MouseMove">
+                <Image.DataContext>
+                    <Properties:Resources/>
+                </Image.DataContext>
+            </Image>
+            <Image x:Name="imgRotateCurve" Margin="36,19,37,10" Width="100" Grid.Column="2" MouseLeftButtonDown="imgRotateCurve_MouseLeftButtonDown" MouseLeftButtonUp="imgRotateCurve_MouseLeftButtonUp" MouseMove="imgRotateCurve_MouseMove" Source="Resources/3.png">
+                <Image.DataContext>
+                    <Properties:Resources/>
+                </Image.DataContext>
+            </Image>
+        </Grid>
+        <Image x:Name="image" Margin="10" Height="489" Width="690" MouseLeftButtonUp="image_MouseLeftButtonUp"/>
+
+    </Grid>
+</Window>
